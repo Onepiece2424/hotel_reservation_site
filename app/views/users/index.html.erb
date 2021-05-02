@@ -1,0 +1,16 @@
+<%= form_with model: @user do |f| %>
+    <div>
+     <p>エリア検索</p>
+     <ul>
+      <li><%= f.search_field :name, size: 30 %></li>
+      <li><%= f.submit "探す" %></li>
+     </ul>
+    </div>
+    <div>
+     <p>フリーワード検索</p>
+     <ul>
+      <li><%= f.search_field :name, size: 30 %></li>
+      <li><%= f.submit "探す" %></li>
+     </ul>
+    </div>
+<% end %>
