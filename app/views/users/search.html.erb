@@ -1,0 +1,20 @@
+<h1>検索結果</h1>
+<table>
+ <thead>
+  <tr>
+   <th>都道府県</th>
+  </tr>
+ </thead>
+</table>
+
+
+<tbody>
+<% @results.each do |user| %>
+ <tr>
+  <td><%= user.name %></td>
+ </tr>
+<% end %>
+</tbody>
+
+<p><%= link_to 'Top', :users %></p>
+

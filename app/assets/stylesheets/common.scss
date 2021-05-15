@@ -7,6 +7,10 @@ header {
       color: white;
       font-family: "Arial", 'メイリオ';
 }
+
+.userList{
+  text-decoration: none;
+}
  
 footer{
       width: 100%;
@@ -16,7 +20,7 @@ footer{
       background-color: black;
       color: white;
       font-size: 5px;
-      position: absolute;
+      position: fixed;
       bottom: 0px;
 }
  
@@ -44,3 +48,8 @@ table td {
         background-color: #ccf;
         padding: 5px;
 }
+
+ .posts-content {
+        width: 350px;
+        height: 200px;
+    }

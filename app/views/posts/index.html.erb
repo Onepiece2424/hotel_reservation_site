@@ -1,0 +1,25 @@
+<h3>ルーム登録履歴</h3>
+ 
+    <table>
+      <thead>
+        <tr>
+          <th>ルーム名</th>
+          <th>ルーム紹介</th>
+          <th>料金</th>
+          <th>住所</th>
+        </tr>
+      </thead>
+ 
+      <tbody>
+        <% @posts.each do |post| %>
+          <tr>
+            <td><%= post.roomname %></td>
+            <td><%= post.introduction %></td>
+            <td><%= post.price %></td>
+            <td><%= post.address %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+ 
+    <p><%= link_to "Topに戻る", :user %></p>

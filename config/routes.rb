@@ -1,8 +1,19 @@
 Rails.application.routes.draw do
+  devise_for :users
+  resources :projects
+  resources :posts
+  
+  
+  
   get 'users/index'
   post 'users/index'
-  get 'lessons/hello', to:'lessons#hello'
-  get 'lessons/call', to:'lessons#call'
+  post 'users/search'
+  
+  get 'users/show'
+  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :users
+  
+  resources :users do
+      get 'search' ,on: :collection
+  end
 end
