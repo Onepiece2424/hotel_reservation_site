@@ -3,6 +3,42 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
+  
+  
+  
+  def new
+    @user = User.new
+  end
+ 
+  def create
+    @user = User.new(params.require(:user).permit(:password, :email, :password_confirmation))
+      if @user.save
+        redirect_to :users
+      else
+        render "new"
+      end
+  end
+  
+  
+  protected
+  # アカウント編集後、プロフィール画面に移動する
+  def after_update_path_for(resource)
+    user_path(id: current_user.id)
+  end
+  
+  
+  def sign_in_required
+    @user = User.find(params[:id])
+  end
+    
+  def profile
+    @user = current_user
+  end
+  
+  def account
+    @user = current_user
+  end
+
 
   # GET /resource/sign_up
   # def new
