@@ -6,15 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(name: '北海道')
-User.create(name: '青森')
-User.create(name: '岩手')
-User.create(name: '秋田')
-User.create(name: '宮城')
-User.create(name: '山形')
-User.create(name: '福島')
-User.create(name: '新潟')
-User.create(name: '栃木')
+
+
+
 User.create(name: '茨城')
 User.create(name: '群馬')
 User.create(name: '埼玉')
@@ -52,15 +46,15 @@ User.create(name: '宮崎')
 User.create(name: '鹿児島')
 User.create(name: '熊本')
 User.create(name: '佐賀')
-User.create(name: '長崎')
-User.create(name: '沖縄')
+User.create(word: '長崎')
+User.create(word: "沖縄")
 
-User.create(name: 'taro', email: 'taro@jiro.com')
-
-users = [
-  { name: '田中ゆうこ' },
-  { name: '森山太郎' },
-  { name: '山田太郎' },
-  { name: '秋山なお' }
+projects =
+[{name: '北海道'},{name: '青森'},{name: '岩手'},
+{name: '秋田'},{name: '宮城'},{name: '山形'},
+{name: '福島'},{name: '新潟'},{name: '栃木'},
 ]
-User.create(users)
+Project.create(projects)
+
+
+Project.create(name: "沖縄プリンスホテル")

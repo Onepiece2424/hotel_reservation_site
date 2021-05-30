@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Icon:</strong>
+  <%= @myaccount.icon %>
+</p>
+
+<p>
+  <strong>Introduction:</strong>
+  <%= @myaccount.introduction %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @myaccount.name %>
+</p>
+
+<%= link_to 'Edit', edit_myaccount_path(@myaccount) %> |
+<%= link_to 'Back', myaccounts_path %>

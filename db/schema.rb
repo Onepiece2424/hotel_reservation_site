@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_10_215133) do
+ActiveRecord::Schema.define(version: 2021_05_28_053456) do
+
+  create_table "myaccounts", force: :cascade do |t|
+    t.binary "icon"
+    t.text "introduction"
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string "content"
@@ -24,7 +32,7 @@ ActiveRecord::Schema.define(version: 2021_05_10_215133) do
   end
 
   create_table "projects", force: :cascade do |t|
-    t.string "name"
+    t.string "word"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -53,6 +61,7 @@ ActiveRecord::Schema.define(version: 2021_05_10_215133) do
     t.integer "failed_attempts", default: 0, null: false
     t.string "unlock_token"
     t.datetime "locked_at"
+    t.string "word"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
