@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_28_053456) do
+ActiveRecord::Schema.define(version: 2021_06_08_204133) do
 
   create_table "myaccounts", force: :cascade do |t|
     t.binary "icon"
@@ -62,6 +62,8 @@ ActiveRecord::Schema.define(version: 2021_05_28_053456) do
     t.string "unlock_token"
     t.datetime "locked_at"
     t.string "word"
+    t.string "icon"
+    t.string "password_digest"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

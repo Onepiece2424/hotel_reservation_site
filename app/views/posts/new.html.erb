@@ -1,7 +1,6 @@
 <h3>ルーム情報登録</h3>
 
  <%= form_for @post do |f| %>
- 
   <table>
         <tr>
           <th><%= f.label :roomname ,"ルーム名" %></th>
@@ -24,7 +23,7 @@
   　　　<div>
         <ul>
           <li><%= f.submit "登録完了する"%></li>
-          <li><%= link_to "TOPページに戻る", :users %></li>
+          <li><%= link_to "ルーム登録履歴画面に戻る", :posts %></li>
         </ul>
       </div>
  <% end %>
