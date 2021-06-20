@@ -1,0 +1,36 @@
+<h3>ルーム情報登録</h3>
+
+ <%= form_for @post do |f| %>
+  <table>
+        <tr>
+          <th><%= f.label :roomname ,"ルーム名" %></th>
+          <td><%= f.text_field :roomname %></td>
+        </tr>
+        <tr>
+          <th><%= f.label :introduction ,"ルーム紹介" %></th>
+          <td><%= f.text_field :introduction %></td>
+        </tr>
+        <tr>
+          <th><%= f.label :price ,"料金" %></th>
+          <td><%= f.text_field :price %></td>
+        </tr>
+        <tr>
+          <th><%= f.label :address ,"住所" %></th>
+          <td><%= f.text_field :address %></td>
+        </tr>
+        <tr>
+          <th><%= f.label :image, "ルーム画像" %></th>
+          <td><%= f.file_field :image %></td>
+        </tr>
+  </table>
+  
+  　　　<div>
+        <ul>
+          <p><%= f.submit "登録完了する"%></p>
+        </ul>
+      </div>
+ <% end %>
+ 
+<p><%= link_to "ルーム登録履歴画面に戻る", :posts %></p>
+<p><%= link_to "Topページ画面へ", projects_index_path %></p>
+   

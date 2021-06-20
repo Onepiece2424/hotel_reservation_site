@@ -1,0 +1,26 @@
+<h2>ユーザー登録</h2>
+<br>
+<%= link_to "新規登録", new_user_registration_path, class: 'post' %> <!-- 新規登録画面に移行する -->
+<%= link_to "ユーザー情報一覧へ", users_path %>
+<br>
+<br>
+<br>
+<h2>フリーワード&エリア検索</h2>
+<br>
+<%= search_form_for @q, url: search_projects_path do |f| %>
+  <%= f.label :word_cont, 'フリーワード＆エリア' %>
+  <%= f.search_field :word_cont %>
+  <%= f.submit '検索' %>
+<% end %>
+<br>
+<br>  
+  <h2>貸したい物件の登録</h2>
+  <%= link_to "貸したい物件の登録画面へ", posts_path %>
+<br>
+<br>
+<br>
+ <h2>借りたい物件の登録</h2>
+ <%= link_to "借りたい物件の登録画面へ", rentals_path %>
+ 
+ 
+ 

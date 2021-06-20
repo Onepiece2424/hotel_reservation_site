@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Staydays:</strong>
+  <%= @rental.staydays %>
+</p>
+
+<p>
+  <strong>Hotelfee:</strong>
+  <%= @rental.hotelfee %>
+</p>
+
+<p>
+  <strong>Numberofpeople:</strong>
+  <%= @rental.numberofpeple %>
+</p>
+
+<p>
+  <strong>PriceSum:</strong>
+  <%= @rental.pricesum %>
+</p>
+
+<%= link_to '編集画面へ', edit_rental_path(@rental) %> |
+<%= link_to '借りたい物件一覧画面へ', rentals_path %>

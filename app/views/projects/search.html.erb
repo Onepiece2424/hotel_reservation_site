@@ -1,0 +1,21 @@
+<h1>検索結果</h1>
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>名前</th>
+      <th>更新日</th>
+      <th>作成日</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @results.each do |project| %>
+      <tr>
+        <td><%= project.id %></td>
+        <td><%= project.word %></td>
+        <td><%= project.updated_at %></td>
+        <td><%= project.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

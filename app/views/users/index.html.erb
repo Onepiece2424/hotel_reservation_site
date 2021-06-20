@@ -1,0 +1,42 @@
+<h3>ユーザー情報一覧</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>ユーザーid</th>
+          <th>名前</th>
+          <th>メールアドレス</th>
+          <th>自己紹介</th>
+          <th>アイコン画像</th>
+          <th>削除</th>
+        </tr>
+      </thead>
+ 
+      <tbody>
+        
+        <% @users.each do |user| %>
+          <tr>
+            <td><%= user.id %> </td>
+            <td><%= user.name %></td>
+            <td><%= user.email %></td>
+            <td><%= user.introduction %></td>
+        <% if user.avatar? %>  <!-- アップロード画像がある場合に実行する -->
+            <td><%= image_tag user.avatar.url %></td>
+        <% else %>
+            <td></td>
+        <% end %>
+           
+           
+            <td>
+              <%= link_to "削除", user, method: :delete, data: { confirm: "本当に削除しますか？" } %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    
+    <br>
+    <br>
+    <%= render "devise/shared/links" %>
+    <%= link_to "TOPページへ戻る", projects_path %>
+    <br>
+    <br>
