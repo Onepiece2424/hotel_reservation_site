@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_08_204133) do
+ActiveRecord::Schema.define(version: 2021_06_20_023821) do
 
   create_table "myaccounts", force: :cascade do |t|
     t.binary "icon"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2021_06_08_204133) do
     t.string "introduction"
     t.integer "price"
     t.string "address"
+    t.string "image"
   end
 
   create_table "projects", force: :cascade do |t|
@@ -37,11 +38,21 @@ ActiveRecord::Schema.define(version: 2021_06_08_204133) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "rentals", force: :cascade do |t|
+    t.string "staydays"
+    t.string "hotelfee"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "numberofpeple"
+    t.string "pricesum"
+    t.string "hotelname"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.integer "age"
-    t.string "introduction"
+    t.text "introduction"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "search"
@@ -64,6 +75,9 @@ ActiveRecord::Schema.define(version: 2021_06_08_204133) do
     t.string "word"
     t.string "icon"
     t.string "password_digest"
+    t.string "avatar"
+    t.string "password"
+    t.string "hotelname"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

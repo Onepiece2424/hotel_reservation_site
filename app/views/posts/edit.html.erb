@@ -1,7 +1,7 @@
-<h3>ルーム情報登録</h3>
-
- <%= form_for @post do |f| %>
-  <table>
+<h3>貸したい物件編集</h3>
+ 
+    <%= form_for @post do |f| %>
+      <table>
         <tr>
           <th><%= f.label :roomname ,"ルーム名" %></th>
           <td><%= f.text_field :roomname %></td>
@@ -16,21 +16,22 @@
         </tr>
         <tr>
           <th><%= f.label :address ,"住所" %></th>
-          <td><%= f.text_field :address %></td>
+          <td><%= f.text_area :address %></td>
         </tr>
         <tr>
-          <th><%= f.label :image, "ルーム画像" %></th>
-          <td><%= f.file_field :image %></td>
+          <th><%= f.label :image,"ルーム画像" %></th>
+          <% if @post.image? %>
+          <td><%= image_tag(@post.image.url, width: 100)  %></td>
+          <% else %>
+          <td></td>
+          <% end %>
         </tr>
-  </table>
-  
-  　　　<div>
+        
+      </table>
+      <div>
         <ul>
-          <p><%= f.submit "登録完了する"%></p>
+          <li><%= f.submit "編集を完了する" %></li>
+          <li><%= link_to "貸したい物件登録情報一覧に戻る", :posts %></li>
         </ul>
       </div>
- <% end %>
- 
-<p><%= link_to "ルーム登録履歴画面に戻る", :posts %></p>
-<p><%= link_to "Topページ画面へ", projects_index_path %></p>
-   
+    <% end %>

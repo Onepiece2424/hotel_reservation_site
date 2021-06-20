@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
   
-  root to: 'projects#index'
+  root 'projects#index'
   get 'projects/index'  
+  post 'projects/index'
+
   
   devise_for :users, controllers: {
     registrations: 'users/registrations',
+    passwords: 'users/passwords',
     sessions: 'users/sessions'
   }
   
@@ -26,11 +29,17 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :posts,:myaccounts
+  resources :posts,:myaccounts, :rentals
   
   resources :projects do
     collection do  
       get 'search'
     end
   end
+  
+  # resources :rentals do
+  #   collection do
+  #     get 'sum'
+  #   end
+  # end
 end

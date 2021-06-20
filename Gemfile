@@ -66,4 +66,7 @@ gem 'devise'
 
 gem 'devise-i18n'
 
-gem 'bcrypt-ruby'
+gem 'carrierwave'
+
+#画像のリサイズ
+gem 'mini_magick'

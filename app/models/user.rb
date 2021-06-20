@@ -8,6 +8,9 @@ class User < ApplicationRecord
   validates :name, presence: true #追記
   validates :email, length: { maximum: 200 } #追記
   
+  # has_secure_password
+  
+  mount_uploader :avatar, AvatarUploader
   
   # def self.search(search) #self.でクラスメソッドとしている
   #   if search # Controllerから渡されたパラメータが!= nilの場合は、titleカラムを部分一致検索

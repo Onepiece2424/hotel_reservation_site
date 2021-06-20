@@ -1,47 +1,28 @@
-<h3>投稿詳細</h3>
+<h3>貸したい物件登録詳細</h3>
  
     <table>
       <tr>
-        <th>投稿内容</th>
-        <td><pre><%= @post.content %></pre></td>
+        <th>ルーム名</th>
+        <td><pre><%= @post.roomname %></pre></td>
       </tr>
       <tr>
-        <th>更新日時</th>
-        <td><%= @post.updated_at.to_s(:datetime_jp) %></td>
+        <th>ルーム紹介</th>
+        <td><%= @post.introduction %></td>
       </tr>
       <tr>
-        <th>投稿日時</th>
-        <td><%= @post.created_at.to_s(:datetime_jp) %></td>
+        <th>料金</th>
+        <td><%= @post.price %></td>
       </tr>
       <tr>
-        <th>投稿者(User_id)</th>
-        <td><%= @post.user_id %></td>
+        <th>住所</th>
+        <td><%= @post.address %></td>
+      </tr>
+      <tr>
+        <th>ルーム画像</th>
+        <td><%= @post.image %></td>
       </tr>
     </table>
  
-    <h3>ユーザー詳細</h3>
- 
-    <table>
-      <tr>
-        <th>名前</th>
-        <td><%= @post.user.name %></td>
-      </tr>
-      <tr>
-        <th>メールアドレス</th>
-        <td><%= @post.user.email %></td>
-      </tr>
-      <tr>
-        <th>年齢</th>
-        <td><%= @post.user.age %></td>
-      </tr>
-      <tr>
-        <th>一言紹介</th>
-        <td><%= @post.user.introduction %></td>
-      </tr>
-    </table>
- 
-    <div>
-      <ul>
-        <li><%= link_to "ユーザー情報一覧に戻る", :projects %></li>
-      </ul>
-    </div>
+   
+   
+  <p><%= link_to "ルーム登録履歴画面に戻る", :posts %></p>

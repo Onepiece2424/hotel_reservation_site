@@ -2,18 +2,18 @@
   
   <!-- ユーザーがログインしていた時の処理 -->
   <h4> メールアドレス： <%= current_user.email %> </h4>
-  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %> <!-- ログアウトをする -->
+  <%= link_to "ログアウト", signout_path, method: :delete %> <!-- ログアウトをする -->
 <% else %>
   <!-- ユーザーがログインしていなかった時の処理 -->
   <h2> 現在ログインしていません </h2>
-  <%= link_to "ログイン", new_user_session_path, class: 'post' %> <!-- ログイン画面に移行する -->
+  <%= link_to "ログイン", login_path, class: 'post' %> <!-- ログイン画面に移行する -->
   <%= link_to "新規登録", new_user_registration_path, class: 'post' %> <!-- 新規登録画面に移行する -->
 <% end %>
-
+<%= link_to "ユーザー情報一覧へ", users_path %>
 <br>
 <br>
 <br>
-<h1>フリーワード&エリア検索</h1>
+<h2>フリーワード&エリア検索</h2>
 <br>
 <%= search_form_for @q, url: search_projects_path do |f| %>
   <%= f.label :word_cont, 'フリーワード＆エリア' %>
@@ -21,8 +21,14 @@
   <%= f.submit '検索' %>
 <% end %>
 <br>
-  <h2>ユーザー登録＆ログイン</h2>
 <br>  
-  <h2>賃貸物件の登録</h2>
+  <h2>貸したい物件の登録</h2>
+  <%= link_to "貸したい物件の登録画面へ", posts_path %>
 <br>
-  <%= link_to "賃貸物件の登録画面へ", new_post_path %>
+<br>
+<br>
+ <h2>借りたい物件の登録</h2>
+ <%= link_to "借りたい物件の登録画面へ", rentals_path %>
+ 
+ 
+ 

@@ -5,13 +5,13 @@
   <%= render "devise/shared/error_messages", resource: resource %>
   
   <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true %>
+    <%= f.label :name, "名前" %><br />
+    <%= f.text_field :name, autofocus: true, placeholder: "ユーザ名を入力してね！" %>
   </div>
   
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.label :email, "Eメールアドレス" %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "e-mailアドレスを入力してね！" %>
   </div>
 
   <div class="field">
@@ -26,10 +26,22 @@
     <%= f.label :password_confirmation %><br/>
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
-
+  
+  <div class="field">
+   <%= f.label :introduction, "自己紹介" %><br />
+    <%= f.text_field :introduction, autofocus: true %>
+  </div>  
+  
+  <div class="field">
+   <%= f.label :avatar, "アイコン画像" %><br />
+   <%= f.file_field :avatar %>
+  </div>
+  
   <div class="actions">
     <%= f.submit "登録" %>
   </div>
 <% end %>
-
+<br>
+<br>
 <%= render "devise/shared/links" %>
+<%= link_to "TOPページへ戻る", projects_path %>

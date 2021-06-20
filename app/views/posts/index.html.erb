@@ -1,4 +1,4 @@
-<h3>ルーム登録履歴</h3>
+<h3>貸したい物件登録履歴</h3>
  
     <table>
       <thead>
@@ -7,6 +7,10 @@
           <th>ルーム紹介</th>
           <th>料金</th>
           <th>住所</th>
+          <tH>ルーム画像</tH>
+          <th>参照</th>
+          <th>編集</th>
+          <th>削除</th>
         </tr>
       </thead>
  
@@ -17,9 +21,23 @@
             <td><%= post.introduction %></td>
             <td><%= post.price %></td>
             <td><%= post.address %></td>
+        <% if post.image? %>  <!-- アップロード画像がある場合に実行する -->
+            <td><%= image_tag(post.image.url, width:100 ) if post.image? %></td>
+        <% else %>
+            <td></td>
+        <% end %>
+            <td><%= link_to "参照", post %></td>
+            <td><%= link_to "編集", [:edit,post] %></td>
+            <td>
+              <%= link_to "削除", post, method: :delete, data: { confirm: "本当に削除しますか？" } %>
+            </td>
           </tr>
         <% end %>
       </tbody>
     </table>
  
     <p><%= link_to "ルーム登録画面へ", :new_post %></p>
+    <p><%= link_to "Topページ画面へ", projects_index_path %></p>
+    
+    
+    

@@ -13,7 +13,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
  
   def create
-    @user = User.new(params.require(:user).permit(:name, :password, :email, :password_confirmation))
+    @user = User.new(params.require(:user).permit(:name, :password, :email, :password_confirmation, :introduction, :icon, :avatar))
       if @user.save
         redirect_to :users
       else
@@ -30,7 +30,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   
   # アカウント編集後、プロフィール画面に移動する
   def after_update_path_for(resource)
-    user_path(id: current_user.id)
+    login_path(id: current_user.id)
   end
   
   
